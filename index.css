@@ -1,0 +1,155 @@
+/* .logo{
+    width: 100px;
+}
+
+.header{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+
+.nav ul{
+    padding-right: 3rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav ul li{
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav ul li a{
+    text-decoration: none;
+}
+
+.search-container{
+    margin: 1rem 0;
+}
+
+.card{
+    width: 15rem;
+    background-color: rgb(223, 216, 216);
+    color: rgb(97, 83, 80);
+    padding-bottom: 0.1rem;
+    border-radius: 10px;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+}
+
+.card h2{
+    margin: 0;
+    padding-left: 0.4rem;
+}
+
+.card h3{
+    margin: 0.3rem 0 0 0;
+    padding-left: 0.4rem;
+}
+
+.card h3 span{
+    font-weight: 500;
+}
+
+.card p{
+    margin-top: 0.6rem;
+    padding-left: 0.4rem;
+}
+
+.res-logo{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card:hover{
+    transform: scale(0.98);
+    cursor: pointer;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-btn{
+    margin: 1rem;
+}
+
+.filter-btn button{
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: gray;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+}
+
+.btn{
+    border: 0;
+    outline: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+}
+
+.top-container{
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.top-shimmer{
+    height: 200px;
+    width: 250px;
+    background-color: rgb(223, 216, 216);
+    border-radius: 15px;
+}
+
+.middle-shimmer{
+    height: 10px;
+    width: 200px;
+    background-color: rgb(223, 216, 216);
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+.bottom-shimmer{
+    height: 10px;
+    width: 150px;
+    background-color: rgb(223, 216, 216);
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+.shimmer{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.error{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.component{
+    border: 2px solid red;
+    margin-top: 2rem;
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
