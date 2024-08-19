@@ -3,20 +3,22 @@ import useFetch from "../utils/useFetch";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import PromotedRes from "./PromotedRes";
+import { RES_URL } from "../utils/constants";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [res, setRes] = useState("");
   const [filteredRes, setFilteredRes] = useState([]);
-  const resData = useFetch();
+  const resData = useFetch(RES_URL);
   
 useEffect(()=>{
   if(resData){
     setResList(resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRes(resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    console.log("body useeffect inner called");
+    // console.log("body useeffect inner called");
   }
-  console.log("body useeffect called");
+  // console.log("body useeffect called");
 }, [resData]);
 
 const handleClick = ()=>{
@@ -57,7 +59,11 @@ const handleClick = ()=>{
           <Shimmer />
           <Shimmer />
         </div>  : filteredRes.map((resData) => (
-            <Link key={resData?.info?.id} to={"restaurant/" + resData?.info?.id} ><RestaurantCard resData={resData} /></Link>
+            <Link key={resData?.info?.id} to={"restaurant/" + resData?.info?.id} >
+              {
+                resData?.info?.avgRating>4.5 ? <PromotedRes resData={resData} />: <RestaurantCard resData={resData} />
+              }
+              </Link>
           ))
         }
       </div>

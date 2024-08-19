@@ -3,7 +3,7 @@ import { Component } from "react";
 class UserClass extends Component{
     constructor(props){
       super(props);
-      console.log("child constructor");
+      // console.log("child constructor");
     //   console.log(props);      {name: 'Gaurab', age: 26}
       // this.state = {
       //   count: 0,
@@ -17,7 +17,7 @@ async componentDidMount(){
   // this.timer = setInterval(() => {
   //   console.log("setInterval class");
   // }, 1000);
-console.log("child componentDidMount");
+// console.log("child componentDidMount");
 const response = await fetch("https://6532c5f0d80bd20280f607a6.mockapi.io/users");
 const result = await response.json();
 this.setState({
@@ -26,17 +26,17 @@ this.setState({
 }
 
 componentDidUpdate(){
-  console.log("child componentDidUpdate");
+  // console.log("child componentDidUpdate");
 }
 
 componentWillUnmount(){
-  console.log("child componentWillUnmount");
+  // console.log("child componentWillUnmount");
   clearInterval(this.timer);
 }
 
     render(){
         // console.log(this.props);     {name: 'Gaurab', age: 26}
-        console.log("child render")
+        // console.log("child render")
         const { name, age } = this.props;
         return (
             <div className="component">

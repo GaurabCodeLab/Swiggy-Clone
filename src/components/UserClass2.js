@@ -3,14 +3,14 @@ import { Component } from "react";
 class UserClass2 extends Component{
     constructor(props){
       super(props);
-      console.log("child2 constructor");
+    //   console.log("child2 constructor");
     }
 componentDidMount(){
-console.log("child2 componentDidMount");
+// console.log("child2 componentDidMount");
 }
 
 componentDidUpdate(){
-  console.log("child2 componentDidUpdate");
+//   console.log("child2 componentDidUpdate");
 }
 
 // componentWillUnmount(){
@@ -19,7 +19,7 @@ componentDidUpdate(){
 // }
 
     render(){
-        console.log("child2 render")
+        // console.log("child2 render")
         const { name } = this.props;
         return (
             <div className="component">
