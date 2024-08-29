@@ -1,6 +1,10 @@
+import UserContext from "../utils/userContext";
+import { useContext } from "react";
+
 const Contact = ()=>{
+   const user = useContext(UserContext);
     return (
-        <h1>I am contact page</h1>
+        <h1>I am contact page, my name is {user.name}</h1>
     )
 };
 

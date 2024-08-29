@@ -1,15 +1,17 @@
 import RestaurantCard from "./RestaurantCard";
 import useFetch from "../utils/useFetch";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import PromotedRes from "./PromotedRes";
 import { RES_URL } from "../utils/constants";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [res, setRes] = useState("");
   const [filteredRes, setFilteredRes] = useState([]);
+  const { context, setContext } = useContext(UserContext);
   const resData = useFetch(RES_URL);
   
 useEffect(()=>{
@@ -44,6 +46,7 @@ const handleClick = ()=>{
         >
           Top Rated Restaurants
         </button>
+        <input type="text" className="border-2 rounded-md p-1 ms-5" placeholder="Enter Context Name" value={context} onChange={(e)=>setContext(e.target.value)} />
       </div>
       <div className="card-container flex flex-wrap justify-start gap-6">
         {

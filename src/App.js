@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "/index.css";
 import Header from "./components/Header";
@@ -11,16 +11,24 @@ import ErrorPage from "./components/Error";
 import Restaurant from "./components/Restaurant";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import UserContext from "./utils/userContext";
 
 const About = lazy(()=>import("./components/About"));
 const Grocery = lazy(()=>import("./components/Grocery"));
 
 const AppContainer = () => {
+const [context, setContext] = useState("")
   return (
-    <div className="app-container">
+    <UserContext.Provider value={{name: context, setContext }}>
+     <div className="app-container">
+       {/* <UserContext.Provider value={{name: "Elon Musk"}}> */}
       <Header />
+      {/* </UserContext.Provider> */}
+      {/* <UserContext.Provider value={{name: "Dolly Kumari"}}> */}
       <Outlet />
+      {/* </UserContext.Provider> */}
     </div>
+    </UserContext.Provider>
   );
 };
 
