@@ -12,6 +12,8 @@ import Restaurant from "./components/Restaurant";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import UserContext from "./utils/userContext";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 const About = lazy(()=>import("./components/About"));
 const Grocery = lazy(()=>import("./components/Grocery"));
@@ -19,8 +21,9 @@ const Grocery = lazy(()=>import("./components/Grocery"));
 const AppContainer = () => {
 const [context, setContext] = useState("")
   return (
+    <Provider store={store}>
     <UserContext.Provider value={{name: context, setContext }}>
-     <div className="app-container">
+     <div className="app-container bg-gray-200">
        {/* <UserContext.Provider value={{name: "Elon Musk"}}> */}
       <Header />
       {/* </UserContext.Provider> */}
@@ -29,6 +32,7 @@ const [context, setContext] = useState("")
       {/* </UserContext.Provider> */}
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
