@@ -9,8 +9,6 @@ const Restaurant = () => {
   const { id } = useParams();
   const resDetails = useFetch(RES_DETAILS + id);
 
-  console.log("res details hai", resDetails);
-
   const itemCardsGroupLength =
     resDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
       ?.length;

@@ -15,22 +15,48 @@ const Body = () => {
   const [filteredRes, setFilteredRes] = useState([]);
   const { context, setContext } = useContext(UserContext);
   const dispatch = useDispatch();
-  const resData = useFetch(RES_URL);
+  // const resData = useFetch(RES_URL);
 
   useEffect(() => {
-    if (resData) {
-      setResList(
-        resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-      setFilteredRes(
-        resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-      // console.log("body useeffect inner called");
-    }
-    // console.log("body useeffect called");
-  }, [resData]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(RES_URL);
+
+        if (!response.ok) {
+          throw new Error("Something Went Wrong");
+        }
+
+        const resData = await response.json();
+        setResList(
+          resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+        setFilteredRes(
+          resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+      } catch (error) {
+        console.log("Error in fetching data", error);
+      }
+    };
+    // console.log("child useeffect called")
+    fetchData();
+  }, []);
+
+  // useEffect(() => {
+  //   if (resData) {
+  //     setResList(
+  //       resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants
+  //     );
+  //     setFilteredRes(
+  //       resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants
+  //     );
+  //     // console.log("body useeffect inner called");
+  //   }
+  //   // console.log("body useeffect called");
+  // }, [resData]);
 
   const handleClick = () => {
     const filteredItem = resList.filter((restaurant) => {
@@ -57,6 +83,7 @@ const Body = () => {
       <div className="top-container mb-10">
         <input
           type="text"
+          data-testid="searchBox"
           placeholder="search..."
           value={res}
           onChange={(e) => setRes(e.target.value)}
@@ -72,7 +99,7 @@ const Body = () => {
           className="ms-8 bg-green-700 text-white px-3 rounded-md py-1"
           onClick={() => {
             const filteredList = resList.filter(
-              (res) => res.info.avgRating > 4
+              (res) => res.info.avgRating > 4.3
             );
             setFilteredRes(filteredList);
           }}
@@ -103,12 +130,8 @@ const Body = () => {
           </div>
         ) : (
           filteredRes?.map((resData) => (
-            <div onClick={() => handleResData(resData)}>
-              ,
-              <Link
-                key={resData?.info?.id}
-                to={"restaurant/" + resData?.info?.id}
-              >
+            <div onClick={() => handleResData(resData)} key={resData?.info?.id}>
+              <Link to={"restaurant/" + resData?.info?.id}>
                 {resData?.info?.avgRating > 4.5 ? (
                   <PromotedRes resData={resData} />
                 ) : (

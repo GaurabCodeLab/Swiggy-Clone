@@ -31,7 +31,9 @@ const Cart = () => {
         </div>
       )}
       {cartDetails.cartItems && cartDetails.quantity !== 0
-        ? cartDetails.cartItems.map((item) => <CartItems item={item} />)
+        ? cartDetails.cartItems.map((item) => (
+            <CartItems item={item} key={item?.card?.info?.id} />
+          ))
         : null}
       {cartDetails.quantity !== 0 && (
         <div>

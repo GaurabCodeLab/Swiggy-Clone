@@ -34,6 +34,7 @@ const ItemDetails = ({ itemCard }) => {
     <div
       className="flex border-b-slate-200 border-b"
       key={itemCard?.card?.info?.id}
+      data-testid="item"
     >
       <div className="bg-white p-4 w-4/6">
         <div>{itemCard?.card?.info?.name}</div>

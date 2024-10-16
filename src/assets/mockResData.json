@@ -1,0 +1,64 @@
+{
+  "info": {
+    "id": "262087",
+    "name": "Imperial Multicuisine Restaurant",
+    "cloudinaryImageId": "rqlwvsmzcfxbg9u6ajgm",
+    "locality": "Banjara Hills",
+    "areaName": "Redhills",
+    "costForTwo": "₹400 for two",
+    "cuisines": ["Biryani", "Chinese", "Indian", "Kebabs", "Tandoor"],
+    "avgRating": 4.3,
+    "parentId": "543714",
+    "avgRatingString": "4.3",
+    "totalRatingsString": "20K+",
+    "sla": {
+      "deliveryTime": 31,
+      "lastMileTravel": 5.5,
+      "serviceability": "SERVICEABLE",
+      "slaString": "30-35 mins",
+      "lastMileTravelString": "5.5 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2024-10-02 02:30:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "₹100 OFF",
+      "subHeader": "ABOVE ₹599",
+      "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {},
+  "cta": {
+    "link": "https://www.swiggy.com/city/hyderabad/imperial-multicuisine-restaurant-banjara-hills-redhills-rest262087",
+    "type": "WEBLINK"
+  }
+}
